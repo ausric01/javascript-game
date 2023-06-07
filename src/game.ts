@@ -1,9 +1,11 @@
 import "./events.js";
+import "./terrain.js"
 
 import { Player } from "./player.js";
 import { jumpScript, movementScript } from "./events.js";
 
 import backdrop from "./assets/backdrop/index.js";
+import { render } from "./terrain.js";
 
 const ctx = window.canvas.getContext("2d") as CanvasRenderingContext2D;
 
@@ -15,6 +17,7 @@ function background() {
 const Game = {
   render: () => {
     background();
+    render();
     Player.render();
     requestAnimationFrame(() => Game.render());
   },

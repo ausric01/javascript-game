@@ -4,7 +4,7 @@ import {
 } from "./assets/character/index.js";
 
 export const PLAYER_SIZE = { x: 50, y: 75 };
-const GRAVITY = -9.8;
+const GRAVITY = -50;
 
 const ctx = window.canvas.getContext("2d") as CanvasRenderingContext2D;
 
@@ -33,7 +33,7 @@ export const Player = {
   /* add +y velocity when not falling */
   jump: () => {
     if (Player.velocity.y === 0) {
-      Player.velocity.y += 1.75;
+      Player.velocity.y += 5;
     }
   },
   /* tells the character model how to render the sprite */
